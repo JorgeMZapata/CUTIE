@@ -37,11 +37,18 @@ class DataLoader():
         self.random = False
         self.data_laundry = False
         self.encoding_factor = 1 # ensures the size (rows/cols) of grid table compat with the network
-        self.classes = ['DontCare', 'company', 'date', 'address', 'total'] # for ICDAR2019 SROIE
+        #self.classes = ['DontCare', 'company', 'date', 'address', 'total'] # for ICDAR2019 SROIE
         #self.classes = ['DontCare', 'Table'] # for table
         #self.classes = ['DontCare', 'Column0', 'Column1', 'Column2', 'Column3', 'Column4', 'Column5'] # for column
         #self.classes = ['DontCare', 'Column']
         #self.classes = ['DontCare', 'VendorName', 'VendorTaxID', 'InvoiceDate', 'InvoiceNumber', 'ExpenseAmount', 'BaseAmount', 'TaxAmount', 'TaxRate'] # for Spanish project
+        self.classes = [
+            'DontCare', 'invoiceNumber', 'invoiceDate', 'billingAddress',
+            'previousBalance', 'latePayments', 'previousMonthAdjustments',
+            'recurringCharges', 'recurringDiscounts', 'usageCharges',
+            'transactionFees', 'billingAdjustments', 'directoryAssistanceCallCompletion',
+            'alternateLongDistanceProvider', 'taxesGST', 'taxesPST',
+            'totalCurrentChargesAfterTaxes', 'totalAmountDue']
         
         self.doc_path = params.doc_path
         self.doc_test_path = params.test_path
